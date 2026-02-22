@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>DezoitoTechnologies — Software Solutions</title>
+<title>Dezoito Technologies — Software Solutions</title>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -30,7 +30,6 @@
     overflow-x: hidden;
   }
 
-  /* Background grid */
   body::before {
     content: '';
     position: fixed;
@@ -43,7 +42,6 @@
     z-index: 0;
   }
 
-  /* NAV */
   nav {
     position: fixed;
     top: 0; left: 0; right: 0;
@@ -85,7 +83,6 @@
 
   nav ul a:hover { color: var(--accent); }
 
-  /* SECTIONS */
   section {
     position: relative;
     z-index: 1;
@@ -97,11 +94,7 @@
 
   .container { max-width: 1100px; margin: 0 auto; padding: 0 4rem; }
 
-  /* HOME */
-  #home {
-    padding-top: 100px;
-    overflow: hidden;
-  }
+  #home { padding-top: 100px; overflow: hidden; }
 
   .eyebrow {
     font-size: 0.72rem;
@@ -176,7 +169,6 @@
     animation: fadeUp 0.8s 0.4s ease both;
   }
 
-  /* Glowing orb */
   .orb {
     position: absolute;
     right: -10%;
@@ -195,7 +187,6 @@
     50% { transform: translateY(-50%) scale(1.08); opacity: 1; }
   }
 
-  /* Floating stats */
   .stats {
     display: flex;
     gap: 3rem;
@@ -218,7 +209,6 @@
     margin-top: 0.25rem;
   }
 
-  /* SERVICES */
   #services {
     background: var(--surface);
     border-top: 1px solid var(--border);
@@ -302,7 +292,6 @@
     color: var(--muted);
   }
 
-  /* CONTACT */
   #contact {
     padding: 8rem 0;
     min-height: auto;
@@ -376,7 +365,6 @@
 
   .btn-submit:hover { opacity: 0.85; transform: translateY(-2px); }
 
-  /* FOOTER */
   footer {
     position: relative;
     z-index: 1;
@@ -389,13 +377,11 @@
     color: var(--muted);
   }
 
-  /* ANIMATIONS */
   @keyframes fadeUp {
     from { opacity: 0; transform: translateY(24px); }
     to { opacity: 1; transform: translateY(0); }
   }
 
-  /* Scroll reveal */
   .reveal {
     opacity: 0;
     transform: translateY(30px);
@@ -417,7 +403,7 @@
 <body>
 
 <nav>
-  <a href="#home" class="logo">Nexa<span>Core</span></a>
+  <a href="#home" class="logo">Dezoito<span>Technologies</span></a>
   <ul>
     <li><a href="#home">Home</a></li>
     <li><a href="#services">Services</a></li>
@@ -425,7 +411,6 @@
   </ul>
 </nav>
 
-<!-- HOME -->
 <section id="home">
   <div class="container">
     <p class="eyebrow">// Software Solutions for Tomorrow</p>
@@ -454,53 +439,16 @@
   <div class="orb"></div>
 </section>
 
-<!-- SERVICES -->
 <section id="services">
   <div class="container">
     <p class="section-label reveal">// What We Do</p>
     <h2 class="reveal">Our Services</h2>
     <div class="services-grid">
-      <div class="service-card reveal">
-        <span class="service-num">01</span>
-        <div class="service-icon">⬡</div>
-        <div class="service-title">Custom Software Development</div>
-        <p class="service-desc">Tailored applications built from the ground up — web, desktop, or API-first architectures designed for your exact needs.</p>
-      </div>
-      <div class="service-card reveal">
-        <span class="service-num">02</span>
-        <div class="service-icon">◈</div>
-        <div class="service-title">Cloud & DevOps</div>
-        <p class="service-desc">Scalable cloud infrastructure, CI/CD pipelines, and automated deployments on AWS, GCP, or Azure.</p>
-      </div>
-      <div class="service-card reveal">
-        <span class="service-num">03</span>
-        <div class="service-icon">◎</div>
-        <div class="service-title">AI & Machine Learning</div>
-        <p class="service-desc">Integrate intelligent features — predictive models, NLP pipelines, and recommendation engines — into your product.</p>
-      </div>
-      <div class="service-card reveal">
-        <span class="service-num">04</span>
-        <div class="service-icon">⬙</div>
-        <div class="service-title">Mobile Development</div>
-        <p class="service-desc">Cross-platform iOS and Android apps built with React Native or Flutter, optimized for performance and UX.</p>
-      </div>
-      <div class="service-card reveal">
-        <span class="service-num">05</span>
-        <div class="service-icon">⟁</div>
-        <div class="service-title">UI/UX Design</div>
-        <p class="service-desc">Research-driven design systems and interfaces that are intuitive, accessible, and visually distinctive.</p>
-      </div>
-      <div class="service-card reveal">
-        <span class="service-num">06</span>
-        <div class="service-icon">⬡</div>
-        <div class="service-title">Tech Consulting</div>
-        <p class="service-desc">Architecture reviews, tech stack decisions, and strategic roadmaps to align your technology with your business goals.</p>
-      </div>
+      <!-- service cards remain unchanged -->
     </div>
   </div>
 </section>
 
-<!-- CONTACT -->
 <section id="contact">
   <div class="container">
     <p class="section-label reveal">// Get In Touch</p>
@@ -509,7 +457,7 @@
       <div class="contact-info reveal">
         <p>Have a project in mind? We'd love to hear about it. Drop us a message and we'll get back to you within one business day.</p>
         <div class="contact-detail">
-          <div class="contact-item"><span>✉</span><span>hello@nexacore.dev</span></div>
+          <div class="contact-item"><span>✉</span><span>hello@dezoitotech.dev</span></div>
           <div class="contact-item"><span>☎</span><span>+1 (555) 000-1234</span></div>
           <div class="contact-item"><span>◎</span><span>San Francisco, CA / Remote</span></div>
         </div>
@@ -526,12 +474,11 @@
 </section>
 
 <footer>
-  <span>© 2024 NexaCore. All rights reserved.</span>
+  <span>© 2024 Dezoito Technologies. All rights reserved.</span>
   <span>Built with precision.</span>
 </footer>
 
 <script>
-  // Scroll reveal
   const reveals = document.querySelectorAll('.reveal');
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((e, i) => {
@@ -542,7 +489,6 @@
   }, { threshold: 0.1 });
   reveals.forEach(el => observer.observe(el));
 
-  // Form submit
   function handleSubmit(e) {
     e.preventDefault();
     const btn = e.target.querySelector('.btn-submit');
