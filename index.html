@@ -635,14 +635,15 @@
           <div class="contact-item"><span>&#9675;</span><span>Chennai, India</span></div>
         </div>
       </div>
-      <form action="https://formspree.io/f/xreaoqjg" method="POST">
-        <input type="text" name="name" placeholder="Your Name" required />
-        <input type="email" name="email" placeholder="Email Address" required />
-        <input type="text" name="subject" placeholder="Subject" />
-        <textarea name="message" placeholder="Tell us about your project"></textarea>
-        <input type="hidden" name="_subject" value="New message from Dezoito website" />
-        <input type="hidden" name="_next" value="https://Dezoito.github.io/#contact" />
-        <button type="submit" class="btn-submit">Send Message &#8594;</button>
+      <form id="contactForm">
+        <input type="text" id="f-name" name="name" placeholder="Your Name" required />
+        <input type="email" id="f-email" name="email" placeholder="Email Address" required />
+        <input type="text" id="f-subject" name="subject" placeholder="Subject" />
+        <textarea id="f-message" name="message" placeholder="Tell us about your project"></textarea>
+        <div id="form-success" style="display:none; padding:1rem; background:#e6f9f0; border:1px solid #00a878; border-radius:3px; color:#00a878; font-size:0.82rem; letter-spacing:0.05em;">
+          &#10003;&nbsp; Message sent successfully! We will get back to you within one business day.
+        </div>
+        <button type="submit" id="form-btn" class="btn-submit">Send Message &#8594;</button>
       </form>
     </div>
   </div>
@@ -664,17 +665,41 @@
   }, { threshold: 0.1 });
   reveals.forEach(function(el) { observer.observe(el); });
 
-  function handleSubmit(e) {
+  var form = document.getElementById('contactForm');
+  var btn  = document.getElementById('form-btn');
+  var successBox = document.getElementById('form-success');
+
+  form.addEventListener('submit', function(e) {
     e.preventDefault();
-    var btn = e.target.querySelector('.btn-submit');
-    btn.textContent = 'Message Sent';
-    btn.style.background = '#00a878';
-    setTimeout(function() {
-      btn.textContent = 'Send Message';
-      btn.style.background = '';
-      e.target.reset();
-    }, 3000);
-  }
+    btn.textContent = 'Sending...';
+    btn.disabled = true;
+
+    var data = new FormData(form);
+
+    fetch('https://formspree.io/f/xreaoqjg', {
+      method: 'POST',
+      body: data,
+      headers: { 'Accept': 'application/json' }
+    })
+    .then(function(response) {
+      if (response.ok) {
+        form.reset();
+        successBox.style.display = 'block';
+        btn.textContent = 'Send Message \u2192';
+        btn.disabled = false;
+        setTimeout(function() {
+          successBox.style.display = 'none';
+        }, 6000);
+      } else {
+        btn.textContent = 'Failed. Try again.';
+        btn.disabled = false;
+      }
+    })
+    .catch(function() {
+      btn.textContent = 'Failed. Try again.';
+      btn.disabled = false;
+    });
+  });
 </script>
 </body>
 </html>
