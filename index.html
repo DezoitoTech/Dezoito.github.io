@@ -632,14 +632,16 @@
         <div class="contact-detail">
           <div class="contact-item"><span>&#9993;</span><span>info&#64;dezoitotech.in</span></div>
           <div class="contact-item"><span>&#9742;</span><span>+91 9500 166 982</span></div>
-          <div class="contact-item"><span>&#9675;</span><span>Chennai, India / Remote</span></div>
+          <div class="contact-item"><span>&#9675;</span><span>Chennai, India</span></div>
         </div>
       </div>
-      <form onsubmit="handleSubmit(event)">
-        <input type="text" placeholder="Your Name" required />
-        <input type="email" placeholder="Email Address" required />
-        <input type="text" placeholder="Subject" />
-        <textarea placeholder="Tell us about your project"></textarea>
+      <form action="https://formspree.io/f/xreaoqjg" method="POST">
+        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="email" name="email" placeholder="Email Address" required />
+        <input type="text" name="subject" placeholder="Subject" />
+        <textarea name="message" placeholder="Tell us about your project"></textarea>
+        <input type="hidden" name="_subject" value="New message from Dezoito website" />
+        <input type="hidden" name="_next" value="https://Dezoito.github.io/#contact" />
         <button type="submit" class="btn-submit">Send Message &#8594;</button>
       </form>
     </div>
